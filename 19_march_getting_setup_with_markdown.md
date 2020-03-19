@@ -5,7 +5,7 @@
 
 <h2 id="getting-setup-with-markdown">Getting setup with Markdown</h2>
 <h6 id="daniel-norris-19-march-2020"><a href="https://github.com/daniel-norris">Daniel Norris</a>, 19 March 2020</h6>
-<h6 id="home--getting-setup-with-markdown"><a href="index.md">Home</a> &gt; Getting setup with Markdown</h6>
+<h6 id="home--getting-setup-with-markdown"><a href="./">Home</a> &gt; Getting setup with Markdown</h6>
 <p>About 2 weeks to go till the start of the course and with the UK in a complete state of panic, sterling at a 35-year low and an inevitable economic recession coming up - I would imagine there’s been better opportunities in the past few years to think about changing careers.</p>
 <p>Still, onwards and upwards…</p>
 <p>Our first video conference uncovered this little gem called Markdown which I’m trying out for the first time. It produces markup which eliminates some of the annoying problems you run into when trying to keep snippets or code blocks in a word processor. The syntax highlighting functionality alone is great. Plus, you can host it on Github Pages which will conveniently help me avoid paying to host a blog that no one will probably read.</p>
