@@ -5,7 +5,7 @@
 
 <h2 id="basic-javascript-algorithms">Basic JavaScript algorithms</h2>
 <h6 id="daniel-norris-19-march-2020"><a href="https://github.com/daniel-norris">Daniel Norris</a>, 19 March 2020</h6>
-<h6 id="home--basic-javascript-algorithms"><a href="index.md">Home</a> &gt; Basic JavaScript algorithms</h6>
+<h6 id="home--basic-javascript-algorithms"><a href="./">Home</a> &gt; Basic JavaScript algorithms</h6>
 <p>Working through FreeCodeCamp’s basic JavaScript algorithms. I need to come back to this and refactor using different approaches, e.g. recursion, reduce, map, etc.</p>
 <p><strong>Reverse a string</strong></p>
 <pre class=" language-javascript"><code class="prism  language-javascript"><span class="token keyword">function</span>  <span class="token function">reverseString</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span> <span class="token punctuation">{</span>
