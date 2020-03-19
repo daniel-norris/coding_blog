@@ -1,5 +1,3 @@
 theme: jekyll-theme-tactile
 title: N00b to Coder
 description: Learning to code, plus notes, observations and general rants... 
-markdown: kramdown
-highlighter: rouge
