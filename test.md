@@ -27,7 +27,7 @@
 <p><strong>Factorialise a number</strong><br>
 Using recusion here. This can be rewritten a number of different ways, e.g. <strong>tail recursion</strong>, <strong>for</strong> statement and <code>reduce()</code>.</p>
 <p>Explanation on recursion <a href="https://www.youtube.com/watch?v=k7-N8R0-KY4">here</a>.</p>
-<p>{%  highlight  javascript %}<br>
+<p>{%  highlight  javascript linenos %}<br>
 function factorialize(num) {<br>
 if (num === 0) {<br>
 return 1;<br>
