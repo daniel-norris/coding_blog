@@ -6,7 +6,8 @@
 <h2 id="basic-javascript-algorithms">Basic JavaScript algorithms</h2>
 <h6 id="daniel-norris-20-march-2020"><a href="https://github.com/daniel-norris">Daniel Norris</a>, 20 March 2020</h6>
 <h6 id="home--basic-javascript-algorithms"><a href="./">Home</a> &gt; Basic JavaScript algorithms</h6>
-<p>Working through FreeCodeCamp’s basic JavaScript algorithms. I need to come back to this and refactor using different approaches, e.g. recursion, reduce, map, etc.</p>
+<p>I’ve been working through a lot of basic JavaScript algorithms - some of which were useful problems to keep a note of for future reference.</p>
+<p>I need to come back to this as it’s helped to identify weaknesses I have around my ability to refactor using different approaches, e.g. recursion, reduce, map, etc.</p>
 <p><strong>Reverse a string</strong></p>
 <pre class=" language-javascript"><code class="prism  language-javascript"><span class="token keyword">function</span>  <span class="token function">reverseString</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span> <span class="token punctuation">{</span>
 	<span class="token keyword">let</span>  newArr <span class="token operator">=</span> str<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">""</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -23,7 +24,7 @@
 <span class="token function">reverseString</span><span class="token punctuation">(</span><span class="token string">"hello"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
 <p><strong>Factorialise a number</strong><br>
-Using recusion here. This can be rewritten a number of different ways, e.g. <strong>tail recursion</strong>, <strong>for</strong> statement and <strong>reduce()</strong>.</p>
+Using recusion here. This can be rewritten a number of different ways, e.g. <strong>tail recursion</strong>, <strong>for</strong> statement and <code>reduce()</code>.</p>
 <p>Explanation on recursion <a href="https://www.youtube.com/watch?v=k7-N8R0-KY4">here</a>.</p>
 <pre class=" language-javascript"><code class="prism  language-javascript"><span class="token keyword">function</span> <span class="token function">factorialize</span><span class="token punctuation">(</span>num<span class="token punctuation">)</span> <span class="token punctuation">{</span>
 	<span class="token keyword">if</span> <span class="token punctuation">(</span>num <span class="token operator">===</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -56,7 +57,8 @@ Using recusion here. This can be rewritten a number of different ways, e.g. <str
 <span class="token function">booWho</span><span class="token punctuation">(</span><span class="token keyword">null</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
 <p><strong>Converting string to sentence case</strong><br>
-Again, rewritten a number of different ways. Originally tried a regex pattern with <strong>replace()</strong> but couldn’t figure out how to get the callback function to return the right value.</p>
+Again, rewritten a number of different ways. Originally tried a regex pattern with <code>replace()</code> but couldn’t figure out how to get the callback function to return the right value.</p>
+<p>This solution uses <strong><code>map()</code></strong>,<strong><code>split()</code></strong> and <strong><code>replace()</code></strong>.</p>
 <pre class=" language-javascript"><code class="prism  language-javascript"><span class="token keyword">function</span>  <span class="token function">titleCase</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span> <span class="token punctuation">{</span>
 	<span class="token keyword">let</span>  newArray <span class="token operator">=</span> str<span class="token punctuation">.</span><span class="token function">toLowerCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">" "</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 	<span class="token comment">// console.log(newArray);</span>
@@ -69,7 +71,7 @@ Again, rewritten a number of different ways. Originally tried a regex pattern wi
 <span class="token punctuation">}</span>
 <span class="token function">titleCase</span><span class="token punctuation">(</span><span class="token string">"I'm a little tea pot"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
-<p><strong>*Edit</strong>: found a solution using a <strong>regex</strong> pattern, which looks a lot easier.</p>
+<p><strong>Edit</strong>: found a solution using a <strong>regex</strong> pattern, which looks a lot easier.</p>
 <pre class=" language-javascript"><code class="prism  language-javascript"><span class="token keyword">function</span> <span class="token function">titleCase</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span> <span class="token punctuation">{</span> 
 	<span class="token keyword">return</span> str<span class="token punctuation">.</span><span class="token function">toLowerCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex">/(^|\s)\S/g</span><span class="token punctuation">,</span> L <span class="token operator">=&gt;</span> 	L<span class="token punctuation">.</span><span class="token function">toUpperCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
 <span class="token punctuation">}</span>
