@@ -47,11 +47,13 @@ return num * factorialize(num - 1);<br>
 
 <span class="token function">factorialize</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
-<pre><code>def what?
+<pre><code>~~~
+def what?
   42
 end
+~~~
+{: .language-ruby}
 </code></pre>
-<p>{: .language-ruby}</p>
 <p><strong>Check <code>typeof()</code> value</strong><br>
 {%  highlight  javascript %}<br>
 function  booWho(bool) {<br>
