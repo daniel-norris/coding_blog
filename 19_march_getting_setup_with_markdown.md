@@ -1,6 +1,9 @@
- ## Getting setup with Markdown 
- ###### [Daniel Norris](https://github.com/daniel-norris), 19 March 2020 
-###### [Home](./) > Getting setup with Markdown  
+ ## Getting setup with Markdown
+ 
+ ###### [Daniel Norris](https://github.com/daniel-norris), 19 March 2020
+ 
+###### [Home](./) > Getting setup with Markdown
+
 <br>
 
 About 2 weeks to go till the start of the course and with the UK in a complete state of panic, sterling at a 35-year low and an inevitable economic recession coming up - I would imagine there's been better opportunities in the past few years to think about changing careers. 
