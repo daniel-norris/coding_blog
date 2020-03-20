@@ -91,7 +91,7 @@ function titleCase(str) {
 	return str.toLowerCase().replace(/(^|\s)\S/g, L => L.toUpperCase()); 
 }
 ```
-**Copying array into other array (in order)** 
+**Copying array into other array (in order)**  
 Using `splice` here and the spread `...` operator. Looks like you could iterate here and use `slice` to copy the array but using `...` was just faster and cleaner. 
 
 The `n` argument indicates the indice you want to start inputting `arr1` into `arr2`. 
