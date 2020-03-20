@@ -71,6 +71,8 @@ Again, rewritten a number of different ways. Originally tried a regex pattern wi
 	<span class="token keyword">return</span> result<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token string">" "</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
 <span class="token punctuation">}</span>
 <span class="token function">titleCase</span><span class="token punctuation">(</span><span class="token string">"I'm a little tea pot"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// returns "I'm A Little Tea Pot</span>
 </code></pre>
 <p><strong>Edit</strong>: found a solution using a <strong>regex</strong> pattern, which looks a lot easier.</p>
 <pre class=" language-javascript"><code class="prism  language-javascript"><span class="token keyword">function</span> <span class="token function">titleCase</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span> <span class="token punctuation">{</span> 
