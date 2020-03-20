@@ -36,18 +36,18 @@ return num * factorialize(num - 1);<br>
 }</p>
 <p>factorialize(5);<br>
 {%  endhighlight  %}</p>
-<p>Same problem using <strong>tail recusion</strong>.<br>
-{%  highlight  javascript linenos %}<br>
-function factorialize(num, factorial = 1) {<br>
-if (num == 0) {<br>
-return factorial;<br>
-} else {<br>
-return factorialize(num - 1, factorial * num);<br>
-}<br>
-}</p>
-<p>factorialize(5);<br>
-{%  endhighlight  %}<br>
-<strong>Check <code>typeof()</code> value</strong><br>
+<p>Same problem using <strong>tail recusion</strong>.</p>
+<pre class=" language-javascript"><code class="prism  language-javascript"><span class="token keyword">function</span> <span class="token function">factorialize</span><span class="token punctuation">(</span>num<span class="token punctuation">,</span> factorial <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token keyword">if</span> <span class="token punctuation">(</span>num <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<span class="token keyword">return</span> factorial<span class="token punctuation">;</span>
+	<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+		<span class="token keyword">return</span> <span class="token function">factorialize</span><span class="token punctuation">(</span>num <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">,</span> factorial <span class="token operator">*</span> num<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token function">factorialize</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p><strong>Check <code>typeof()</code> value</strong><br>
 {%  highlight  javascript %}<br>
 function  booWho(bool) {<br>
 if (typeof(bool) === “boolean”) {<br>
