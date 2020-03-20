@@ -1,133 +1,148 @@
----
+## Basic JavaScript algorithms
 
-
----
-
-<h2 id="basic-javascript-algorithms">Basic JavaScript algorithms</h2>
-<h6 id="daniel-norris-20-march-2020"><a href="https://github.com/daniel-norris">Daniel Norris</a>, 20 March 2020</h6>
-<h6 id="home--basic-javascript-algorithms"><a href="./">Home</a> &gt; Basic JavaScript algorithms</h6>
-<br> 
-<p>I’ve been working through a lot of basic JavaScript algorithms - some of which were useful problems to keep a note of for future reference.</p>
-<p>I need to come back to this as it’s helped to identify weaknesses I have around my ability to refactor using different approaches, e.g. recursion, reduce, map, etc.</p>
-<p><strong>Reverse a string</strong></p>
-<pre class=" language-javascript"><code class="prism  language-javascript"><span class="token keyword">function</span>  <span class="token function">reverseString</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	<span class="token keyword">let</span>  newArr <span class="token operator">=</span> str<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">""</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-	console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>newArr<span class="token punctuation">)</span><span class="token punctuation">;</span>
-	<span class="token keyword">let</span>  revArr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-	
-	<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span>  i <span class="token operator">=</span> newArr<span class="token punctuation">.</span>length <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&gt;=</span> <span class="token number">0</span><span class="token punctuation">;</span> i<span class="token operator">--</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-		revArr<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>newArr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-		console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>revArr<span class="token punctuation">)</span><span class="token punctuation">;</span>
-	<span class="token punctuation">}</span>
-<span class="token keyword">return</span>  revArr<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token string">""</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-
-<span class="token function">reverseString</span><span class="token punctuation">(</span><span class="token string">"hello"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre>
-<p><strong>Factorialise a number</strong><br>
-Using recusion here. This can be rewritten a number of different ways, e.g. <strong>tail recursion</strong>, <strong>for</strong> statement and <code>reduce()</code>.</p>
-<p>Explanation on recursion <a href="https://www.youtube.com/watch?v=k7-N8R0-KY4">here</a>.</p>
-<pre class=" language-javascript"><code class="prism  language-javascript"><span class="token keyword">function</span> <span class="token function">factorialize</span><span class="token punctuation">(</span>num<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	<span class="token keyword">if</span> <span class="token punctuation">(</span>num <span class="token operator">===</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-		<span class="token keyword">return</span> <span class="token number">1</span><span class="token punctuation">;</span>
-	<span class="token punctuation">}</span>
-	<span class="token keyword">return</span> num <span class="token operator">*</span> <span class="token function">factorialize</span><span class="token punctuation">(</span>num <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-
-<span class="token function">factorialize</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre>
-<p>Same problem using <strong>tail recusion</strong>.  I think my brain exceeded its maximum call stack size trying to understand this.</p>
-<pre class=" language-javascript"><code class="prism  language-javascript"><span class="token keyword">function</span> <span class="token function">factorialize</span><span class="token punctuation">(</span>num<span class="token punctuation">,</span> factorial <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	<span class="token keyword">if</span> <span class="token punctuation">(</span>num <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-		<span class="token keyword">return</span> factorial<span class="token punctuation">;</span>
-	<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
-		<span class="token keyword">return</span> <span class="token function">factorialize</span><span class="token punctuation">(</span>num <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">,</span> factorial <span class="token operator">*</span> num<span class="token punctuation">)</span><span class="token punctuation">;</span>
-	<span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-
-<span class="token function">factorialize</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre>
-<p><strong>Check <code>typeof()</code> value</strong></p>
-<pre class=" language-javascript"><code class="prism  language-javascript"><span class="token keyword">function</span>  <span class="token function">booWho</span><span class="token punctuation">(</span>bool<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">typeof</span><span class="token punctuation">(</span>bool<span class="token punctuation">)</span> <span class="token operator">===</span> <span class="token string">"boolean"</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-		<span class="token keyword">return</span>  <span class="token boolean">true</span><span class="token punctuation">;</span>
-	<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
-		<span class="token keyword">return</span>  <span class="token boolean">false</span><span class="token punctuation">;</span>
-	<span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-<span class="token function">booWho</span><span class="token punctuation">(</span><span class="token keyword">null</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre>
-<p><strong>Converting string to sentence case</strong><br>
-Again, rewritten a number of different ways. Originally tried a regex pattern with <code>replace()</code> but couldn’t figure out how to get the callback function to return the right value.</p>
-<p>This solution uses <code>map()</code>, <code>split()</code> and <code>replace()</code>.</p>
-<pre class=" language-javascript"><code class="prism  language-javascript"><span class="token keyword">function</span>  <span class="token function">titleCase</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	<span class="token keyword">let</span>  newArray <span class="token operator">=</span> str<span class="token punctuation">.</span><span class="token function">toLowerCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">" "</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-	<span class="token comment">// console.log(newArray);</span>
-
-	<span class="token keyword">let</span>  result <span class="token operator">=</span> newArray<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span>val<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	<span class="token comment">// console.log(val.replace(val.charAt(0), val.charAt(0).toUpperCase()));</span>
-		<span class="token keyword">return</span>  val<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span>val<span class="token punctuation">.</span><span class="token function">charAt</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">,</span> val<span class="token punctuation">.</span><span class="token function">charAt</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toUpperCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-	<span class="token punctuation">}</span><span class="token punctuation">)</span>
-	<span class="token keyword">return</span> result<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token string">" "</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
-<span class="token punctuation">}</span>
-<span class="token function">titleCase</span><span class="token punctuation">(</span><span class="token string">"I'm a little tea pot"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-<span class="token comment">// returns "I'm A Little Tea Pot</span>
-</code></pre>
-<p><strong>Edit</strong>: found a solution using a <strong>regex</strong> pattern, which looks a lot easier.</p>
-<pre class=" language-javascript"><code class="prism  language-javascript"><span class="token keyword">function</span> <span class="token function">titleCase</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span> <span class="token punctuation">{</span> 
-	<span class="token keyword">return</span> str<span class="token punctuation">.</span><span class="token function">toLowerCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex">/(^|\s)\S/g</span><span class="token punctuation">,</span> L <span class="token operator">=&gt;</span> L<span class="token punctuation">.</span><span class="token function">toUpperCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
-<span class="token punctuation">}</span>
-</code></pre>
-<p><strong>Copying array into other array (in order)</strong><br>
-Using <code>splice</code> here and the spread <code>...</code> operator. Looks like you could iterate here and use <code>slice</code> to copy the array but using <code>...</code> was just faster and cleaner.</p>
-<p>The <code>n</code> argument indicates the indice you want to start inputting <code>arr1</code> into <code>arr2</code>.</p>
-<pre class=" language-javascript"><code class="prism  language-javascript"><span class="token keyword">function</span> <span class="token function">frankenSplice</span><span class="token punctuation">(</span>arr1<span class="token punctuation">,</span> arr2<span class="token punctuation">,</span> n<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+ ###### [Daniel Norris](https://github.com/daniel-norris), 20 March 2020 
  
-	<span class="token comment">/*
+###### [Home](./) > Basic JavaScript algorithms
+<br> 
+
+I've been working through a lot of basic JavaScript algorithms - some of which were useful problems to keep a note of for future reference. 
+
+I need to come back to this as it's helped to identify weaknesses I have around my ability to refactor using different approaches, e.g. recursion, reduce, map, etc. 
+
+**Reverse a string** 
+```javascript
+function  reverseString(str) {
+	let  newArr = str.split("");
+	console.log(newArr);
+	let  revArr = [];
+	
+	for (let  i = newArr.length - 1; i >= 0; i--) {
+		revArr.push(newArr[i]);
+		console.log(revArr);
+	}
+return  revArr.join("");
+}
+
+reverseString("hello");
+```
+**Factorialise a number** 
+Using recusion here. This can be rewritten a number of different ways, e.g. **tail recursion**, **for** statement and `reduce()`. 
+
+Explanation on recursion [here](https://www.youtube.com/watch?v=k7-N8R0-KY4). 
+
+```javascript
+function factorialize(num) {
+	if (num === 0) {
+		return 1;
+	}
+	return num * factorialize(num - 1);
+}
+
+factorialize(5);
+```
+Same problem using **tail recusion**.  I think my brain exceeded its maximum call stack size trying to understand this. 
+~~~javascript
+function factorialize(num, factorial = 1) {
+	if (num == 0) {
+		return factorial;
+	} else {
+		return factorialize(num - 1, factorial * num);
+	}
+}
+
+factorialize(5);
+~~~
+
+**Check `typeof()` value**
+```javascript 
+function  booWho(bool) {
+	if (typeof(bool) === "boolean") {
+		return  true;
+	} else {
+		return  false;
+	}
+}
+booWho(null);
+```
+**Converting string to sentence case**
+Again, rewritten a number of different ways. Originally tried a regex pattern with `replace()` but couldn't figure out how to get the callback function to return the right value. 
+
+This solution uses `map()`, `split()` and `replace()`. 
+```javascript
+function  titleCase(str) {
+	let  newArray = str.toLowerCase().split(" ");
+	// console.log(newArray);
+
+	let  result = newArray.map(function(val) {
+	// console.log(val.replace(val.charAt(0), val.charAt(0).toUpperCase()));
+		return  val.replace(val.charAt(0), val.charAt(0).toUpperCase());
+	})
+	return result.join(" "); 
+}
+titleCase("I'm a little tea pot");
+
+// returns "I'm A Little Tea Pot
+```
+**Edit**: found a solution using a **regex** pattern, which looks a lot easier. 
+
+```javascript
+function titleCase(str) { 
+	return str.toLowerCase().replace(/(^|\s)\S/g, L => L.toUpperCase()); 
+}
+```
+**Copying array into other array (in order)** 
+Using `splice` here and the spread `...` operator. Looks like you could iterate here and use `slice` to copy the array but using `...` was just faster and cleaner. 
+
+The `n` argument indicates the indice you want to start inputting `arr1` into `arr2`. 
+
+```javascript
+function frankenSplice(arr1, arr2, n) {
+ 
+	/*
 	console.log(arr2);
 	console.log(arr1)
 	console.log(n);
-	*/</span>
+	*/
 
-	<span class="token keyword">let</span>  result <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token operator">...</span>arr2<span class="token punctuation">]</span><span class="token punctuation">;</span>
-	<span class="token comment">// console.log(result);</span>
+	let  result = [...arr2];
+	// console.log(result);
 
-	result<span class="token punctuation">.</span><span class="token function">splice</span><span class="token punctuation">(</span>n<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token operator">...</span>arr1<span class="token punctuation">)</span><span class="token punctuation">;</span>
-	<span class="token comment">/*
+	result.splice(n, 0, ...arr1);
+	/*
 	console.log(arr2);
 	console.log(arr1);
-	*/</span>
+	*/
 	
-	<span class="token keyword">return</span> result<span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-<span class="token function">frankenSplice</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment">// result returns [4, 1, 2, 3, 5, 6] </span>
-</code></pre>
-<p><strong>Removing falsy values from an array</strong><br>
-Pretty straightforward exercise which removes false bool values from an array, then uses <code>filter()</code> to remove them.</p>
-<p>You could probably use a <code>switch</code> statement here with <strong>fall through</strong> instead of the <code>if</code> statement and <code>map()</code>  instead of <code>filter()</code> to potentially remove the values (?).</p>
-<pre class=" language-js"><code class="prism  language-js"><span class="token keyword">function</span>  <span class="token function">bouncer</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span>  i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> arr<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	<span class="token keyword">if</span> <span class="token punctuation">(</span>arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">===</span> <span class="token boolean">false</span> <span class="token operator">|</span>
-	arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">===</span> <span class="token keyword">null</span> <span class="token operator">|</span>
-	arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">===</span> <span class="token number">0</span> <span class="token operator">|</span>
-	arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">===</span> <span class="token string">""</span> <span class="token operator">|</span>
-	arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">===</span> undefined <span class="token operator">|</span>
-	arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">===</span> <span class="token number">NaN</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-		arr<span class="token punctuation">.</span><span class="token function">splice</span><span class="token punctuation">(</span>i<span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-		<span class="token punctuation">}</span>
-	<span class="token punctuation">}</span>
+	return result;
+}
+frankenSplice([1, 2, 3], [4, 5, 6], 1);
+// result returns [4, 1, 2, 3, 5, 6] 
+```
+**Removing falsy values from an array**
+Pretty straightforward exercise which removes false bool values from an array, then uses `filter()` to remove them. 
 
-<span class="token keyword">let</span>  result <span class="token operator">=</span> arr<span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span>falsy <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
-	<span class="token keyword">return</span>  falsy <span class="token operator">!=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span>
+You could probably use a `switch` statement here with **fall through** instead of the `if ` statement and `map()`  instead of `filter()` to potentially remove the values (?). 
+```js
+function  bouncer(arr) {
+	for (let  i = 0; i < arr.length; i++) {
+	if (arr[i] === false |
+	arr[i] === null |
+	arr[i] === 0 |
+	arr[i] === "" |
+	arr[i] === undefined |
+	arr[i] === NaN) {
+		arr.splice(i, 2, false);
+		}
+	}
 
-<span class="token keyword">return</span>  result<span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
+let  result = arr.filter(falsy => {
+	return  falsy != false;
+})
 
-<span class="token function">bouncer</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">7</span><span class="token punctuation">,</span> <span class="token string">"ate"</span><span class="token punctuation">,</span> <span class="token string">""</span><span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token number">9</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+return  result;
+}
 
-<span class="token comment">// result returns [7, "ate", 9] </span>
-</code></pre>
+bouncer([7, "ate", "", false, 9]);
 
+// result returns [7, "ate", 9] 
+```
