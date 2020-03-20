@@ -3,9 +3,9 @@
 
 ---
 
-<h2 id="basic-javascript-algorithms">Basic JavaScript algorithms</h2>
 <h6 id="daniel-norris-20-march-2020"><a href="https://github.com/daniel-norris">Daniel Norris</a>, 20 March 2020</h6>
 <h6 id="home--basic-javascript-algorithms"><a href="./">Home</a> &gt; Basic JavaScript algorithms</h6>
+<h2 id="basic-javascript-algorithms">Basic JavaScript algorithms</h2>
 <p>I’ve been working through a lot of basic JavaScript algorithms - some of which were useful problems to keep a note of for future reference.</p>
 <p>I need to come back to this as it’s helped to identify weaknesses I have around my ability to refactor using different approaches, e.g. recursion, reduce, map, etc.</p>
 <p><strong>Reverse a string</strong></p>
