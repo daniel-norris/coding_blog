@@ -1,8 +1,8 @@
- ## Getting setup with Markdown
- 
- ###### [Daniel Norris](https://github.com/daniel-norris), 19 March 2020
- 
-###### [Home](./) > Getting setup with Markdown
+## Getting setup with Markdown
+
+##### [Daniel Norris](https://github.com/daniel-norris), 19 March 2020
+
+##### [Home](./) > Getting setup with Markdown
 
 <br>
 
