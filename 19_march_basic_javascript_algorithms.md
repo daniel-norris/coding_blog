@@ -10,7 +10,7 @@ I've been working through a lot of basic JavaScript algorithms - some of which w
 
 I need to come back to this as it's helped to identify weaknesses I have around my ability to refactor using different approaches, e.g. recursion, reduce, map, etc. 
 
-**Reverse a string** 
+**Reverse a string**  
 ```javascript
 function  reverseString(str) {
 	let  newArr = str.split("");
@@ -26,7 +26,7 @@ return  revArr.join("");
 
 reverseString("hello");
 ```
-**Factorialise a number** 
+**Factorialise a number**  
 Using recusion here. This can be rewritten a number of different ways, e.g. **tail recursion**, **for** statement and `reduce()`. 
 
 Explanation on recursion [here](https://www.youtube.com/watch?v=k7-N8R0-KY4). 
@@ -65,7 +65,7 @@ function  booWho(bool) {
 }
 booWho(null);
 ```
-**Converting string to sentence case**
+**Converting string to sentence case**  
 Again, rewritten a number of different ways. Originally tried a regex pattern with `replace()` but couldn't figure out how to get the callback function to return the right value. 
 
 This solution uses `map()`, `split()` and `replace()`. 
@@ -119,7 +119,7 @@ function frankenSplice(arr1, arr2, n) {
 frankenSplice([1, 2, 3], [4, 5, 6], 1);
 // result returns [4, 1, 2, 3, 5, 6] 
 ```
-**Removing falsy values from an array**
+**Removing falsy values from an array**  
 Pretty straightforward exercise which removes false bool values from an array, then uses `filter()` to remove them. 
 
 You could probably use a `switch` statement here with **fall through** instead of the `if ` statement and `map()`  instead of `filter()` to potentially remove the values (?). 
