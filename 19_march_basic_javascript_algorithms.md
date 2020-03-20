@@ -27,14 +27,16 @@
 <p><strong>Factorialise a number</strong><br>
 Using recusion here. This can be rewritten a number of different ways, e.g. <strong>tail recursion</strong>, <strong>for</strong> statement and <code>reduce()</code>.</p>
 <p>Explanation on recursion <a href="https://www.youtube.com/watch?v=k7-N8R0-KY4">here</a>.</p>
-<pre class=" language-javascript"><code class="prism  language-javascript"><span class="token keyword">function</span> <span class="token function">factorialize</span><span class="token punctuation">(</span>num<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	<span class="token keyword">if</span> <span class="token punctuation">(</span>num <span class="token operator">===</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-		<span class="token keyword">return</span> <span class="token number">1</span><span class="token punctuation">;</span>
-	<span class="token punctuation">}</span>
-	<span class="token keyword">return</span> num <span class="token operator">*</span> <span class="token function">factorialize</span><span class="token punctuation">(</span>num <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
+<pre><code>{%  highlight  javascript %}
+function factorialize(num) {
+	if (num === 0) {
+		return 1;
+	}
+	return num * factorialize(num - 1);
+}
 
-<span class="token function">factorialize</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+factorialize(5);
+{%  endhighlight  %}
 </code></pre>
 <p>Same problem using <strong>tail recusion</strong>.</p>
 <pre class=" language-javascript"><code class="prism  language-javascript"><span class="token keyword">function</span> <span class="token function">factorialize</span><span class="token punctuation">(</span>num<span class="token punctuation">,</span> factorial <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
