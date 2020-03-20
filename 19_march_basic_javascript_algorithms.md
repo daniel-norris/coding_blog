@@ -147,3 +147,22 @@ bouncer([7, "ate", "", false, 9]);
 
 // result returns [7, "ate", 9] 
 ```
+**Sorting array of numbers ascending (and finding indice)**  
+Tried solving this with a loop but then later realised there is a method for this called `sort()`.  You can then later find the index using either `findIndex()` or `indexOf()`. 
+
+```javascript 
+function  getIndexToIns(arr, num) {
+	arr.push(num);
+	arr.sort(function(a, b) {
+		return  a - b;
+	});
+	
+	// console.log(arr);
+	// console.log(num);
+	return  arr.indexOf(num);
+}
+
+getIndexToIns([40, 60], 50);
+```
+
+
