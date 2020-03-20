@@ -1,8 +1,8 @@
 ## Getting setup with Markdown
 
-##### [Daniel Norris](https://github.com/daniel-norris), 19 March 2020
+###### [Daniel Norris](https://github.com/daniel-norris), 19 March 2020
 
-##### [Home](./) > Getting setup with Markdown
+###### [Home](./) > Getting setup with Markdown
 
 <br>
 
@@ -12,7 +12,7 @@ Still, onwards and upwards...
 
 Our first video conference uncovered this little gem called Markdown which I'm trying out for the first time. It produces markup which eliminates some of the annoying problems you run into when trying to keep snippets or code blocks in a word processor. The syntax highlighting functionality alone is great. Plus, you can host it on Github Pages which will conveniently help me avoid paying to host a blog that no one will probably read. 
 
-**Markdown Editors**
+**Markdown Editors**  
 The Markdown website suggests some great tools and components for Markdown including: 
 
 - [StackEdit](https://www.markdownguide.org/tools/stackedit/)
