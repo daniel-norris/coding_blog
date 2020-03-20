@@ -58,7 +58,7 @@ Using recusion here. This can be rewritten a number of different ways, e.g. <str
 </code></pre>
 <p><strong>Converting string to sentence case</strong><br>
 Again, rewritten a number of different ways. Originally tried a regex pattern with <code>replace()</code> but couldn’t figure out how to get the callback function to return the right value.</p>
-<p>This solution uses <strong><code>map()</code></strong>,<strong><code>split()</code></strong> and <strong><code>replace()</code></strong>.</p>
+<p>This solution uses <code>map()</code>, <code>split()</code> and <code>replace()</code>.</p>
 <pre class=" language-javascript"><code class="prism  language-javascript"><span class="token keyword">function</span>  <span class="token function">titleCase</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span> <span class="token punctuation">{</span>
 	<span class="token keyword">let</span>  newArray <span class="token operator">=</span> str<span class="token punctuation">.</span><span class="token function">toLowerCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">" "</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 	<span class="token comment">// console.log(newArray);</span>
