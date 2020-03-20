@@ -77,4 +77,27 @@ Again, rewritten a number of different ways. Originally tried a regex pattern wi
 	<span class="token keyword">return</span> str<span class="token punctuation">.</span><span class="token function">toLowerCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex">/(^|\s)\S/g</span><span class="token punctuation">,</span> L <span class="token operator">=&gt;</span> L<span class="token punctuation">.</span><span class="token function">toUpperCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
 <span class="token punctuation">}</span>
 </code></pre>
+<p><strong>Copying array into other array (in order)</strong><br>
+Using <code>splice</code> here and the spread <code>...</code> operator. Looks like you could iterate here and use <code>slice</code> to copy the array but using <code>...</code> was just faster and cleaner.</p>
+<pre class=" language-javascript"><code class="prism  language-javascript"> <span class="token keyword">function</span>  <span class="token function">frankenSplice</span><span class="token punctuation">(</span>arr1<span class="token punctuation">,</span> arr2<span class="token punctuation">,</span> n<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+ 
+	<span class="token comment">/*
+	console.log(arr2);
+	console.log(arr1)
+	console.log(n);
+	*/</span>
+
+	<span class="token keyword">let</span>  result <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token operator">...</span>arr2<span class="token punctuation">]</span><span class="token punctuation">;</span>
+	<span class="token comment">// console.log(result);</span>
+
+	result<span class="token punctuation">.</span><span class="token function">splice</span><span class="token punctuation">(</span>n<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token operator">...</span>arr1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token comment">/*
+	console.log(arr2);
+	console.log(arr1);
+	*/</span>
+	
+<span class="token keyword">return</span> result<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token function">frankenSplice</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
 
