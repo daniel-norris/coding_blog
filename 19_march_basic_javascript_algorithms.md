@@ -79,7 +79,8 @@ Again, rewritten a number of different ways. Originally tried a regex pattern wi
 </code></pre>
 <p><strong>Copying array into other array (in order)</strong><br>
 Using <code>splice</code> here and the spread <code>...</code> operator. Looks like you could iterate here and use <code>slice</code> to copy the array but using <code>...</code> was just faster and cleaner.</p>
-<pre class=" language-javascript"><code class="prism  language-javascript"> <span class="token keyword">function</span>  <span class="token function">frankenSplice</span><span class="token punctuation">(</span>arr1<span class="token punctuation">,</span> arr2<span class="token punctuation">,</span> n<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<p>The <code>n</code> argument indicates the indice you want to start inputting <code>arr1</code> into <code>arr2</code>.</p>
+<pre class=" language-javascript"><code class="prism  language-javascript"> <span class="token keyword">function</span> <span class="token function">frankenSplice</span><span class="token punctuation">(</span>arr1<span class="token punctuation">,</span> arr2<span class="token punctuation">,</span> n<span class="token punctuation">)</span> <span class="token punctuation">{</span>
  
 	<span class="token comment">/*
 	console.log(arr2);
@@ -99,5 +100,6 @@ Using <code>splice</code> here and the spread <code>...</code> operator. Looks l
 <span class="token keyword">return</span> result<span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 <span class="token function">frankenSplice</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// result returns [4, 1, 2, 3, 5, 6] </span>
 </code></pre>
 
