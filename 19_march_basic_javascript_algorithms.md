@@ -27,56 +27,57 @@
 <p><strong>Factorialise a number</strong><br>
 Using recusion here. This can be rewritten a number of different ways, e.g. <strong>tail recursion</strong>, <strong>for</strong> statement and <code>reduce()</code>.</p>
 <p>Explanation on recursion <a href="https://www.youtube.com/watch?v=k7-N8R0-KY4">here</a>.</p>
-<pre><code>{%  highlight  javascript %}
-function factorialize(num) {
-	if (num === 0) {
-		return 1;
-	}
-	return num * factorialize(num - 1);
-}
-
-factorialize(5);
-{%  endhighlight  %}
-</code></pre>
-<p>Same problem using <strong>tail recusion</strong>.</p>
-<pre class=" language-javascript"><code class="prism  language-javascript"><span class="token keyword">function</span> <span class="token function">factorialize</span><span class="token punctuation">(</span>num<span class="token punctuation">,</span> factorial <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	<span class="token keyword">if</span> <span class="token punctuation">(</span>num <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-		<span class="token keyword">return</span> factorial<span class="token punctuation">;</span>
-	<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
-		<span class="token keyword">return</span> <span class="token function">factorialize</span><span class="token punctuation">(</span>num <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">,</span> factorial <span class="token operator">*</span> num<span class="token punctuation">)</span><span class="token punctuation">;</span>
-	<span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-
-<span class="token function">factorialize</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre>
-<p><strong>Check <code>typeof()</code> value</strong></p>
-<pre class=" language-javascript"><code class="prism  language-javascript"><span class="token keyword">function</span>  <span class="token function">booWho</span><span class="token punctuation">(</span>bool<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">typeof</span><span class="token punctuation">(</span>bool<span class="token punctuation">)</span> <span class="token operator">===</span> <span class="token string">"boolean"</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-		<span class="token keyword">return</span>  <span class="token boolean">true</span><span class="token punctuation">;</span>
-	<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
-		<span class="token keyword">return</span>  <span class="token boolean">false</span><span class="token punctuation">;</span>
-	<span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-<span class="token function">booWho</span><span class="token punctuation">(</span><span class="token keyword">null</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre>
-<p><strong>Converting string to sentence case</strong><br>
+<p>{%  highlight  javascript %}<br>
+function factorialize(num) {<br>
+if (num === 0) {<br>
+return 1;<br>
+}<br>
+return num * factorialize(num - 1);<br>
+}</p>
+<p>factorialize(5);<br>
+{%  endhighlight  %}</p>
+<p>Same problem using <strong>tail recusion</strong>.<br>
+{%  highlight  javascript %}<br>
+function factorialize(num, factorial = 1) {<br>
+if (num == 0) {<br>
+return factorial;<br>
+} else {<br>
+return factorialize(num - 1, factorial * num);<br>
+}<br>
+}</p>
+<p>factorialize(5);<br>
+{%  endhighlight  %}<br>
+<strong>Check <code>typeof()</code> value</strong><br>
+{%  highlight  javascript %}<br>
+function  booWho(bool) {<br>
+if (typeof(bool) === “boolean”) {<br>
+return  true;<br>
+} else {<br>
+return  false;<br>
+}<br>
+}<br>
+booWho(null);<br>
+{%  endhighlight  %}<br>
+<strong>Converting string to sentence case</strong><br>
 Again, rewritten a number of different ways. Originally tried a regex pattern with <code>replace()</code> but couldn’t figure out how to get the callback function to return the right value.</p>
-<p>This solution uses <code>map()</code>, <code>split()</code> and <code>replace()</code>.</p>
-<pre class=" language-javascript"><code class="prism  language-javascript"><span class="token keyword">function</span>  <span class="token function">titleCase</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	<span class="token keyword">let</span>  newArray <span class="token operator">=</span> str<span class="token punctuation">.</span><span class="token function">toLowerCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">" "</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-	<span class="token comment">// console.log(newArray);</span>
-
-	<span class="token keyword">let</span>  result <span class="token operator">=</span> newArray<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span>val<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	<span class="token comment">// console.log(val.replace(val.charAt(0), val.charAt(0).toUpperCase()));</span>
-		<span class="token keyword">return</span>  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>val<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span>val<span class="token punctuation">.</span><span class="token function">charAt</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">,</span> val<span class="token punctuation">.</span><span class="token function">charAt</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toUpperCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-	<span class="token punctuation">}</span><span class="token punctuation">)</span>
-	console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>result<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token string">" "</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-<span class="token function">titleCase</span><span class="token punctuation">(</span><span class="token string">"I'm a little tea pot"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<p>This solution uses <code>map()</code>, <code>split()</code> and <code>replace()</code>.<br>
+{%  highlight  javascript %}<br>
+function  titleCase(str) {<br>
+let  newArray = str.toLowerCase().split(" ");<br>
+// console.log(newArray);</p>
+<pre><code>let  result = newArray.map(function(val) {
+// console.log(val.replace(val.charAt(0), val.charAt(0).toUpperCase()));
+	return  console.log(val.replace(val.charAt(0), val.charAt(0).toUpperCase()));
+})
+console.log(result.join(" "));
 </code></pre>
-<p><strong>Edit</strong>: found a solution using a <strong>regex</strong> pattern, which looks a lot easier.</p>
-<pre class=" language-javascript"><code class="prism  language-javascript"><span class="token keyword">function</span> <span class="token function">titleCase</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span> <span class="token punctuation">{</span> 
-	<span class="token keyword">return</span> str<span class="token punctuation">.</span><span class="token function">toLowerCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex">/(^|\s)\S/g</span><span class="token punctuation">,</span> L <span class="token operator">=&gt;</span> 	L<span class="token punctuation">.</span><span class="token function">toUpperCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
-<span class="token punctuation">}</span>
-</code></pre>
+<p>}<br>
+titleCase(“I’m a little tea pot”);<br>
+{%  endhighlight  %}<br>
+<strong>Edit</strong>: found a solution using a <strong>regex</strong> pattern, which looks a lot easier.</p>
+<p>{%  highlight  javascript %}<br>
+function titleCase(str) {<br>
+return str.toLowerCase().replace(/(^|\s)\S/g, L =&gt; 	L.toUpperCase());<br>
+}<br>
+{%  endhighlight  %}</p>
 
