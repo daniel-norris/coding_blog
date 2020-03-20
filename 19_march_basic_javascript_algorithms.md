@@ -4,7 +4,7 @@
 ---
 
 <h2 id="basic-javascript-algorithms">Basic JavaScript algorithms</h2>
-<h6 id="daniel-norris-19-march-2020"><a href="https://github.com/daniel-norris">Daniel Norris</a>, 19 March 2020</h6>
+<h6 id="daniel-norris-20-march-2020"><a href="https://github.com/daniel-norris">Daniel Norris</a>, 20 March 2020</h6>
 <h6 id="home--basic-javascript-algorithms"><a href="./">Home</a> &gt; Basic JavaScript algorithms</h6>
 <p>Working through FreeCodeCamp’s basic JavaScript algorithms. I need to come back to this and refactor using different approaches, e.g. recursion, reduce, map, etc.</p>
 <p><strong>Reverse a string</strong></p>
@@ -54,5 +54,24 @@ Using recusion here. This can be rewritten a number of different ways, e.g. <str
 	<span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 <span class="token function">booWho</span><span class="token punctuation">(</span><span class="token keyword">null</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p><strong>Converting string to sentence case</strong><br>
+Again, rewritten a number of different ways. Originally tried a regex pattern with <strong>replace()</strong> but couldn’t figure out how to get the callback function to return the right value.</p>
+<pre class=" language-javascript"><code class="prism  language-javascript"><span class="token keyword">function</span>  <span class="token function">titleCase</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token keyword">let</span>  newArray <span class="token operator">=</span> str<span class="token punctuation">.</span><span class="token function">toLowerCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">" "</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token comment">// console.log(newArray);</span>
+
+	<span class="token keyword">let</span>  result <span class="token operator">=</span> newArray<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span>val<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token comment">// console.log(val.replace(val.charAt(0), val.charAt(0).toUpperCase()));</span>
+		<span class="token keyword">return</span>  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>val<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span>val<span class="token punctuation">.</span><span class="token function">charAt</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">,</span> val<span class="token punctuation">.</span><span class="token function">charAt</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toUpperCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span><span class="token punctuation">)</span>
+	console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>result<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token string">" "</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token function">titleCase</span><span class="token punctuation">(</span><span class="token string">"I'm a little tea pot"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p><strong>*Edit</strong>: found a solution using a <strong>regex</strong> pattern, which looks a lot easier.</p>
+<pre class=" language-javascript"><code class="prism  language-javascript"><span class="token keyword">function</span> <span class="token function">titleCase</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span> <span class="token punctuation">{</span> 
+	<span class="token keyword">return</span> str<span class="token punctuation">.</span><span class="token function">toLowerCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex">/(^|\s)\S/g</span><span class="token punctuation">,</span> L <span class="token operator">=&gt;</span> 	L<span class="token punctuation">.</span><span class="token function">toUpperCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+<span class="token punctuation">}</span>
 </code></pre>
 
