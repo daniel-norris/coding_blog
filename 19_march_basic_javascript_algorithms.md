@@ -37,7 +37,7 @@ return num * factorialize(num - 1);<br>
 <p>factorialize(5);<br>
 {%  endhighlight  %}</p>
 <p>Same problem using <strong>tail recusion</strong>.<br>
-{%  highlight  javascript %}<br>
+{%  highlight  javascript linenos %}<br>
 function factorialize(num, factorial = 1) {<br>
 if (num == 0) {<br>
 return factorial;<br>
