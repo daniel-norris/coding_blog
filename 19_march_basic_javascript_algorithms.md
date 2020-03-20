@@ -36,7 +36,7 @@ Using recusion here. This can be rewritten a number of different ways, e.g. <str
 
 <span class="token function">factorialize</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
-<p>Same problem using <strong>tail recusion</strong>.</p>
+<p>Same problem using <strong>tail recusion</strong>.  I think my brain nearly imploded trying to understand this.</p>
 <pre class=" language-javascript"><code class="prism  language-javascript"><span class="token keyword">function</span> <span class="token function">factorialize</span><span class="token punctuation">(</span>num<span class="token punctuation">,</span> factorial <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
 	<span class="token keyword">if</span> <span class="token punctuation">(</span>num <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
 		<span class="token keyword">return</span> factorial<span class="token punctuation">;</span>
@@ -101,5 +101,6 @@ Using <code>splice</code> here and the spread <code>...</code> operator. Looks l
 <span class="token punctuation">}</span>
 <span class="token function">frankenSplice</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token comment">// result returns [4, 1, 2, 3, 5, 6] </span>
+
 </code></pre>
 
