@@ -164,5 +164,38 @@ function  getIndexToIns(arr, num) {
 
 getIndexToIns([40, 60], 50);
 ```
+**Check that all letters in array match other array**  
+Using `split()`, `every()` and `toLowerCase()` here to firstly split the second element into characters, lowercase to make it easier to evaluate and then using `every()` to compare against the letters in the first element. 
 
+```javascript
+function  mutation(arr) {
+	return  arr[1]
+		.toLowerCase()
+		.split("")
+		.every(function(letter) {
+			return  arr[0].toLowerCase().indexOf(letter) != -1;
+		});
+}
+
+mutation(["hello", "hey"]);
+// returns false 
+```
+**Split array into `n` groups** 
+This splits the original array into a multi-dimensional array split into `n` number of groups. 
+
+Don't forget the second parameter for `slice()` is an index compared to `splice()` which is the number of elements removed. `slice()` will also just extract to the end of the sequence if second para. is greater than length array. 
+
+```javascript 
+function  chunkArrayInGroups(arr, size) {
+
+	let  newArray = [];
+	for (let  i = 0; i < arr.length; i += size) {
+		newArray.push(arr.slice(i, i + size));
+	}
+	return  newArray;
+}
+
+chunkArrayInGroups(["a", "b", "c", "d"], 2);
+// returns [["a", "b"], ["c", "d"]]
+```
 
