@@ -74,5 +74,18 @@ function  Dog () {
 	this.numLegs = 4
 }
 ```
+And using the constructor to create a new object: 
+
+```javascript 
+function  Dog() {
+	this.name = "Rupert";
+	this.color = "brown";
+	this.numLegs = 4;
+}
+let  hound = new  Dog();
+
+console.log(hound);
+// returns { name: 'Rupert', color: 'brown', numLegs: 4 }
+```
 
 
