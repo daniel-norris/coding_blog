@@ -1,0 +1,185 @@
+## Basic JavaScript algorithms
+
+###### [Daniel Norris](https://github.com/daniel-norris), 20 March 2020 
+ 
+###### [Home](./) > Basic JavaScript algorithms
+
+<br> 
+
+I've been working through a lot of basic JavaScript algorithms - some of which were useful problems to keep a note of for future reference. 
+
+I need to come back to this as it's helped to identify weaknesses I have around my ability to refactor using different approaches, e.g. recursion, reduce, map, etc. 
+
+**Reverse a string**  
+```javascript
+function  reverseString(str) {
+	let  newArr = str.split("");
+	console.log(newArr);
+	let  revArr = [];
+	
+	for (let  i = newArr.length - 1; i >= 0; i--) {
+		revArr.push(newArr[i]);
+		console.log(revArr);
+	}
+return  revArr.join("");
+}
+
+reverseString("hello");
+```
+**Factorialise a number**  
+Using recusion here. This can be rewritten a number of different ways, e.g. **tail recursion**, **for** statement and `reduce()`. 
+
+Explanation on recursion [here](https://www.youtube.com/watch?v=k7-N8R0-KY4). 
+
+```javascript
+function factorialize(num) {
+	if (num === 0) {
+		return 1;
+	}
+	return num * factorialize(num - 1);
+}
+
+factorialize(5);
+```
+Same problem using **tail recusion**.  I think my brain exceeded its maximum call stack size trying to understand this. 
+~~~javascript
+function factorialize(num, factorial = 1) {
+	if (num == 0) {
+		return factorial;
+	} else {
+		return factorialize(num - 1, factorial * num);
+	}
+}
+
+factorialize(5);
+~~~
+
+**Check `typeof()` value**
+```javascript 
+function  booWho(bool) {
+	if (typeof(bool) === "boolean") {
+		return  true;
+	} else {
+		return  false;
+	}
+}
+booWho(null);
+```
+**Converting string to sentence case**  
+Again, rewritten a number of different ways. Originally tried a regex pattern with `replace()` but couldn't figure out how to get the callback function to return the right value. 
+
+This solution uses `map()`, `split()` and `replace()`. 
+```javascript
+function  titleCase(str) {
+	let  newArray = str.toLowerCase().split(" ");
+	// console.log(newArray);
+
+	let  result = newArray.map(function(val) {
+	// console.log(val.replace(val.charAt(0), val.charAt(0).toUpperCase()));
+		return  val.replace(val.charAt(0), val.charAt(0).toUpperCase());
+	})
+	return result.join(" "); 
+}
+titleCase("I'm a little tea pot");
+
+// returns "I'm A Little Tea Pot
+```
+**Edit**: found a solution using a **regex** pattern, which looks a lot easier. 
+
+```javascript
+function titleCase(str) { 
+	return str.toLowerCase().replace(/(^|\s)\S/g, L => L.toUpperCase()); 
+}
+```
+**Copying array into other array (in order)**  
+Using `splice` here and the spread `...` operator. Looks like you could iterate here and use `slice` to copy the array but using `...` was just faster and cleaner. 
+
+The `n` argument indicates the indice you want to start inputting `arr1` into `arr2`. 
+
+```javascript
+function frankenSplice(arr1, arr2, n) {
+ 
+	/*
+	console.log(arr2);
+	console.log(arr1)
+	console.log(n);
+	*/
+
+	let  result = [...arr2];
+	// console.log(result);
+
+	result.splice(n, 0, ...arr1);
+	/*
+	console.log(arr2);
+	console.log(arr1);
+	*/
+	
+	return result;
+}
+frankenSplice([1, 2, 3], [4, 5, 6], 1);
+// result returns [4, 1, 2, 3, 5, 6] 
+```
+**Removing falsy values from an array**  
+Pretty straightforward exercise which removes false bool values from an array, then uses `filter()` to remove them. 
+
+You could probably use a `switch` statement here with **fall through** instead of the `if ` statement and `map()`  instead of `filter()` to potentially remove the values (?). 
+```js
+function  bouncer(arr) {
+	for (let  i = 0; i < arr.length; i++) {
+	if (arr[i] === false |
+	arr[i] === null |
+	arr[i] === 0 |
+	arr[i] === "" |
+	arr[i] === undefined |
+	arr[i] === NaN) {
+		arr.splice(i, 2, false);
+		}
+	}
+
+let  result = arr.filter(falsy => {
+	return  falsy != false;
+})
+
+return  result;
+}
+
+bouncer([7, "ate", "", false, 9]);
+
+// result returns [7, "ate", 9] 
+```
+**Sorting array of numbers ascending (and finding indice)**  
+Tried solving this with a loop but then later realised there is a method for this called `sort()`.  You can then later find the index using either `findIndex()` or `indexOf()`. 
+
+```javascript 
+function  getIndexToIns(arr, num) {
+	arr.push(num);
+	arr.sort(function(a, b) {
+		return  a - b;
+	});
+	
+	// console.log(arr);
+	// console.log(num);
+	return  arr.indexOf(num);
+}
+
+getIndexToIns([40, 60], 50);
+```
+**Check that all letters in array match other array**  
+Using `split()`, `every()` and `toLowerCase()` here to firstly split the second element into characters, lowercase to make it easier to evaluate and then using `every()` to compare against the letters in the first element. 
+
+```javascript
+function  mutation(arr) {
+	return  arr[1]
+		.toLowerCase()
+		.split("")
+		.every(function(letter) {
+			return  arr[0].toLowerCase().indexOf(letter) != -1;
+		});
+}
+
+mutation(["hello", "hey"]);
+// returns false 
+```
+
+
+
