@@ -8,11 +8,9 @@
 
 Revisiting objects again on JavaScript by taking a look at the challenges available on [freeCodeCamp.com](www.freecodecamp.com).  
 
-> Objects are filled with unordered data and organised into key-value pairs. Keys can be of any data type. 
-
-> If a key does not have special characters then you don't need to use quotation marks. 
-
-> The values are also referred to as properties and functions are referred to as methods. 
+- Objects are filled with unordered data and organised into key-value pairs. Keys can be of any data type. 
+- If a key does not have special characters then you don't need to use quotation marks. 
+- The values are also referred to as properties and functions are referred to as methods. 
 
 A quick example of a basic object includes: 
 ```javascript 
@@ -66,3 +64,15 @@ let  dog = {
 
 dog.sayLegs();
 ```
+**Creating a constructor function**  
+Constructor has a capitalised name to distinguish between normal functions. Uses the `this` keyword to define properties and methods for the object it will create. 
+
+```javascript 
+function  Dog () {
+	this.name = "Spot",
+	this.color = "Brown",
+	this.numLegs = 4
+}
+```
+
+
