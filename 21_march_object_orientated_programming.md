@@ -6,7 +6,7 @@
 
 <br> 
 
-Revisiting objects again on JavaScript by taking a look at the challenges available on freeCodeCamp.com. 
+Revisiting objects again on JavaScript by taking a look at the challenges available on [freeCodeCamp.com](www.freecodecamp.com).  
 
 > Objects are filled with unordered data and organised into key-value pairs. Keys can be of any data type. 
 
