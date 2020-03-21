@@ -23,9 +23,36 @@ let dog = {
 ```
 **Accessing properties**  
 There are two ways to access properties: **dot notation** and **bracket notation**. 
+
 ```javascript
 let dog = {
 	name: "Spot",
 	numLegs: 4
 };
 ```
+Bracket notation... 
+```javascript 
+let dog = {
+	name: "Spot", 
+	numLegs: 4
+}; 
+
+console.log(dog["name"]); 
+// returns "Spot" 
+```
+
+**Creating a method**  
+Similar to creating a **declarative function** just assign it a key. 
+
+```javascript 
+let  dog = {
+	name: "Spot",
+	numLegs: 4,
+	sayLegs: function () {
+		return  "This dog has " + dog.numLegs + " legs.";
+	}
+};
+dog.sayLegs();
+// returns "This dog has 4 legs."
+```
+
