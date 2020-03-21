@@ -6,11 +6,11 @@
 
 <br>
 
-About 2 weeks to go till the start of the course and with the UK in a complete state of panic, sterling at a 35-year low and an inevitable economic recession coming up - I would imagine there's been better opportunities in the past few years to think about changing careers. 
+About 2 weeks to go till the start of the course and with the UK in a complete state of panic, sterling at a 35-year low and an inevitable economic recession coming up -I'd imagine there's been better opportunities in the past few years to think about changing careers. 
 
 Still, onwards and upwards... 
 
-Our first video conference uncovered this little gem called Markdown which I'm trying out for the first time. It produces markup which eliminates some of the annoying problems you run into when trying to keep snippets or code blocks in a word processor. The syntax highlighting functionality alone is great. Plus, you can host it on Github Pages which will conveniently help me avoid paying to host a blog that no one will probably read. 
+Our first video conference uncovered this little gem called Markdown which I'm trying out for the first time. It produces markup which eliminates some of the annoying problems you run into when trying to keep snippets or code blocks in a word processor. The syntax highlighting functionality alone is great. Plus, you can host it on Github Pages which will conveniently help me avoid paying to host a blog that no one will probably ever read. 
 
 **Markdown Editors**<br>
 The Markdown website suggests some great tools and components for Markdown including: 
