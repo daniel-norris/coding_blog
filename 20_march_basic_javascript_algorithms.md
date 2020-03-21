@@ -180,7 +180,7 @@ function  mutation(arr) {
 mutation(["hello", "hey"]);
 // returns false 
 ```
-**Split array into `n` groups** 
+**Split array into `n` groups**  
 This splits the original array into a multi-dimensional array split into `n` number of groups. 
 
 Don't forget the second parameter for `slice()` is an index compared to `splice()` which is the number of elements removed. `slice()` will also just extract to the end of the sequence if second para. is greater than length array. 
