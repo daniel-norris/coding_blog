@@ -30,7 +30,7 @@ let dog = {
 	numLegs: 4
 };
 ```
-Bracket notation... 
+e.g. **bracket notation**.
 ```javascript 
 let dog = {
 	name: "Spot", 
@@ -55,4 +55,14 @@ let  dog = {
 dog.sayLegs();
 // returns "This dog has 4 legs."
 ```
+**Using the `this` keyword**  
+`this` refers to the parent object and helps to make code more maintainable if the objects key changes. 
+```javascript 
+let  dog = {
+	name: "Spot",
+	numLegs: 4,
+	sayLegs: function() {return  "This dog has " + this.numLegs + " legs.";}
+};
 
+dog.sayLegs();
+```
