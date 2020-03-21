@@ -26,6 +26,19 @@ Opted for StackEdit as it includes support for nearly everything including HTML 
 **Hosting**<br>
 The GitHub Pages site covers hosting and setting up a repo for it to be hosted. You'll need to copy the Jekyll themes and paste into your repo to edit if you want to change the HTML or CSS. 
 
+You'll need to setup the _config.yml file to ensure its using the right Markdown processor (Kramdown in this case is GitHub Pages default) and the right syntax highlighter (Rouge is the default). You can copy and paste this into your config file and change the `title` and `description` to get started. 
+
+	theme: jekyll-theme-tactile
+	title: N00b to Coder
+	description: Learning to code, plus notes, observations and general rants...
+	highlighter: rouge
+	markdown: kramdown
+	kramdown:
+		input: GFM
+		auto_ids: true
+		syntax_highlighter: rouge
+
+
 **Syntax**<br>
 The Markdown website offers cheatsheets and overview of syntax. John Gruber's original documentation is a good place to start too. 
 
@@ -36,12 +49,16 @@ Some interested functionality includes syntax highlighting and how easy it is to
 
 ```javascript
 //triple backtick (`) followed by lang name
+// ```javascript
+
 for (let i = 0; i < 3; i++) {
 	console.log("Hello, World!"); 
 }
 ```
-	//single tab 
-	let a = b 
+```javascript
+//single tab 
+let a = b 
+```
 
 That's it! Time for a coffee. 
 
