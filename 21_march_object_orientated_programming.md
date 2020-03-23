@@ -112,6 +112,8 @@ let  myHouse = new  House(3);
 // console.log(myHouse);
 myHouse  instanceof  House; // returns true
 ```
+### Types of Properties
+
 **Object own properties** 
 In the example below, `name` and `numLegs` are own properties as they are defined directly on the instance object of `canary`. This pushes all the own properties to a new array called `ownProps`. 
 
@@ -141,4 +143,88 @@ function  Dog(name) {
 let  beagle = new  Dog("Snoopy");
 console.log(beagle.numLegs); // returns 2
 ```
+**Iterate over all properties** 
+Own properties are defined on the instance itself and `prototype` properties are defined on the prototype. 
 
+You can iterate over this using the `hasOwnProperty`method. 
+
+```javascript 
+function  Dog(name) {
+	this.name = name;
+}
+
+Dog.prototype.numLegs = 4;
+let  beagle = new  Dog("Snoopy");
+let  ownProps = [];
+let  prototypeProps = [];
+
+for (let  property  in  beagle) {
+	if (beagle.hasOwnProperty(property)) {
+		ownProps.push(property);
+	} else {
+		prototypeProps.push(property);
+	}
+}
+console.log(ownProps); // returns ['name']
+console.log(prototypeProps); // returns ['numLegs']
+```
+**The `constructor` property** 
+You can use the `constructor` property to check what constructor function created the instance. 
+
+Since you can change or overwrite the constructor property its generally better to use `instanceOf` method to check the type of an object. 
+
+```javascript
+function  Dog(name) {
+	this.name = name;
+}
+
+function  joinDogFraternity(candidate) {
+	if (candidate.constructor === Dog) {
+		return  true;
+	} else {
+		return  false;
+	}
+}
+
+let  labrador = new  Dog();
+
+console.log(joinDogFraternity(labrador)); // returns true
+
+console.log(labrador.constructor === Dog); // returns true
+```
+### The prototype 
+**Changing `prototype` to a new object** 
+Instead of adding properties to the prototype individually, you can set them to a new object so they are all added at once. 
+
+```javascript
+function  Dog(name) {
+	this.name = name;
+}
+Dog.prototype = {
+	numLegs: 2,
+	eat: function() {
+		console.log("nom nom nom");
+	},
+	describe: function() {
+		console.log("My name is " + this.name);
+	}
+};
+```
+**Set the `constructor` property when changing `prototype`**
+If you manually set the prototype to a new object it deletes the constructor property. So you need to set it manually. 
+
+```javascript 
+function  Dog(name) {
+	this.name = name;
+}
+Dog.prototype = {
+	constructor: Dog,
+	numLegs: 4,
+	eat: function() {
+		console.log("nom nom nom");
+	},
+	describe: function() {
+		console.log("My name is " + this.name);
+	}
+};
+```
