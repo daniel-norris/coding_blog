@@ -130,5 +130,15 @@ for (let  property  in  canary) {
 }
 console.log(ownProps); // returns ['name', 'numLegs']
 ```
+**`prototype` properties to reduce code**
+Might need to revisit this but the principle here is that using `prototype` reduces duplicate code in lieu of using the `this` keyword to assign common variables to new instances. In the example below, all new instances of the `Dog` constructor will have a `numLegs` property. 
 
+```javascript 
+function  Dog(name) {
+	this.name = name,
+	Dog.prototype.numLegs = 2
+}
+let  beagle = new  Dog("Snoopy");
+console.log(beagle.numLegs); // returns 2
+```
 
