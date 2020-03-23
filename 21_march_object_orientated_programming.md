@@ -87,5 +87,48 @@ let  hound = new  Dog();
 console.log(hound);
 // returns { name: 'Rupert', color: 'brown', numLegs: 4 }
 ```
+Using constructor to create a new object and passing arguments as parameters: 
+
+```javascript 
+function  Dog(name, color) {
+	this.name = name,
+	this.color = color,
+	this.numLegs = 4
+}
+
+let  terrier = new  Dog("Spot", "Brown");
+console.log(terrier); // returns { name: 'Spot', color: 'Brown', numLegs: 4 }
+console.log(terrier.name); // returns Spot
+```
+**Check objects constructor using `instanceof`**
+You can check the parent constructor for  an instance using `instanceof`. Returns a bool value. 
+
+```javascript 
+function  House(numBedrooms) {
+	this.numBedrooms = numBedrooms;
+}
+
+let  myHouse = new  House(3);
+// console.log(myHouse);
+myHouse  instanceof  House; // returns true
+```
+**Object own properties** 
+In the example below, `name` and `numLegs` are own properties as they are defined directly on the instance object of `canary`. This pushes all the own properties to a new array called `ownProps`. 
+
+```javascript 
+function  Bird(name) {
+	this.name = name;
+	this.numLegs = 2;
+}
+let  canary = new  Bird("Tweety");
+let  ownProps = [];
+
+for (let  property  in  canary) {
+	if (canary.hasOwnProperty(property)) {
+		ownProps.push(property);
+	}
+}
+console.log(ownProps); // returns ['name', 'numLegs']
+```
 
 
