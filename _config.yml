@@ -1,9 +1,0 @@
-theme: jekyll-theme-tactile
-title: N00b to Coder
-description: Learning to code, plus notes, observations and general rants... 
-highlighter: rouge
-markdown: kramdown
-kramdown:
-  input: GFM
-  auto_ids: true
-  syntax_highlighter: rouge
