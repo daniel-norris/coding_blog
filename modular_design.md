@@ -29,7 +29,7 @@ I rock climb a lot as a hobby, and a big part of any major route or trip is in t
 
 My earlier projects had resulted in aethestically good code at face value but if you had asked me to return to it in a weeks time, I would have had no idea where to start if I needed to fix or debug part of the website as my CSS was a mess. 
 
-## Module design
+## From mess to modular design
 
 I needed a new approach, which is when I was introduced to [Brad Frost's, Atomic Design](https://atomicdesign.bradfrost.com/). Conceptually, Frost's model is pretty easy to get your head around and provides a systematic way to approach not just web design but user interface development for any device. 
 
@@ -62,9 +62,11 @@ Some other things highlights from this week included:
 
 All of this combined with the Atomic Design model has enabled me to write cleaner, [DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself)(er?) code by the end of week two that was unrecognisable from the stuff I was creating in the first. All in less time too!
 
-It got me to thinking about an early lecture I watched by [David Malan](https://cs.harvard.edu/malan/bio/) on Harvard's CS50x - if you haven't watched it then I 100% recommend it - where he referred to the layers upon layers of abstraction we now experience as Developers which enable us to develop solutions faster, more efficiently and effectively. As the result of us standing on the "shoulders of giants" that came before us. 
+It got me to thinking about an early lecture I watched by [David Malan](https://cs.harvard.edu/malan/bio/) on Harvard's CS50x - if you haven't watched it then I 100% recommend it - where he referred to the layers upon layers of abstraction we now experience as Developers which enable us to develop solutions faster, more efficiently and effectively. 
 
+He referred to this advantage as the result of standing on the "shoulders of giants" (or more accurately Developers) that came before us. 
 
+One thing I know for certain, I'm just glad I have a process now to follow for starting my projects. 
 
 [^1]: https://www.independent.co.uk/arts-entertainment/films/news/this-is-how-long-andy-s-tunnel-was-in-the-shawshank-redemption-a6874701.html
 
