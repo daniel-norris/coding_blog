@@ -1,4 +1,4 @@
-#### 12 Apr '20 - [How modular design made me a better Developer](modular_design). 
+#### 12 Apr '20 - [How modular design made me a better Developer](modular_design.md). 
 
 #### 21 Mar '20 - [Object Orientated Programming in JavaScript](21_march_object_orientated_programming). 
 
