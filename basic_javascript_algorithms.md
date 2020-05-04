@@ -1,3 +1,5 @@
+# Basic JavaScript Algorithms
+
 [Daniel Norris](https://github.com/daniel-norris), 20 March 2020 
  
 [Home](./) > Basic JavaScript algorithms
