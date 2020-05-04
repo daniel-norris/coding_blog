@@ -1,4 +1,4 @@
-Full Stack Developer in training @ [DevelopMe_](https://developme.training/). 
+Full Stack Developer in training @ [DevelopMe_](https://developme.training/)
 
 Learning to develop in JavaScript, React, Node, PHP and Laravel. Quick place to jot down thoughts and blog as I progress through the course. 
 
