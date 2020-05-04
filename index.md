@@ -1,6 +1,6 @@
-Full Stack Developer in training. 
+Full Stack Developer in training @ [DevelopMe_](https://developme.training/). 
 
-A place to quickly jot down thoughts and opinions on aspects of my journey to becoming a Full Stack Developer. Page written in Markdown. 
+Learning to develop in JavaScript, React, Node, PHP and Laravel. Quick place to jot down thoughts and blog as I progress through the course. 
 
 #### 12 Apr '20 - [How modular design made me a better Developer](modular_design.md). 
 

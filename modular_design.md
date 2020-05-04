@@ -1,5 +1,3 @@
-# How modular design has made me a better Developer
-
 [Daniel Norris](https://github.com/daniel-norris), 12 April 2020
  
 [Home](./) > How modular design has made me a better Developer
